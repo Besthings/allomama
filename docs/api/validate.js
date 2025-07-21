@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     if (key && hwid) {
         try {
             // Load the list of valid keys using full URL path
-            const validKeysResponse = await fetch('https://vrzoz.github.io/pointblank-macro/api/valid-keys.json');
+            const validKeysResponse = await fetch('https://besthings.github.io/allomama/api/valid-keys.json');
             const validKeysData = await validKeysResponse.json();
             const validKeys = validKeysData.keys || [];
             
