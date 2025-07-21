@@ -1,0 +1,10 @@
+{
+    "success": true,
+    "message": "License key is valid",
+    "data": {
+        "key": "DEMO-KEY",
+        "hwid": "any",
+        "activated_at": "2023-01-01T00:00:00Z",
+        "last_checked": "2023-01-01T00:00:00Z"
+    }
+} 

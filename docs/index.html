@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>License Validator API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .endpoint {
+            background-color: #e9f7fe;
+            padding: 15px;
+            border-left: 4px solid #0099ff;
+            margin: 20px 0;
+        }
+        .note {
+            background-color: #fff8e1;
+            padding: 15px;
+            border-left: 4px solid #ffb300;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>License Validator API</h1>
+    
+    <p>This is a simple API for validating license keys. It works by checking against a predefined list of valid keys.</p>
+    
+    <div class="endpoint">
+        <h2>Endpoint</h2>
+        <p><code>GET /api/validate.html?key={license_key}&hwid={hardware_id}</code></p>
+    </div>
+    
+    <h2>Parameters</h2>
+    <ul>
+        <li><strong>key</strong>: The license key to validate</li>
+        <li><strong>hwid</strong>: The hardware ID of the machine</li>
+    </ul>
+    
+    <h2>Response Format</h2>
+    <pre>
+{
+    "success": true|false,
+    "message": "Status message",
+    "data": {
+        "key": "license_key",
+        "hwid": "hardware_id",
+        "activated_at": "ISO timestamp",
+        "last_checked": "ISO timestamp"
+    }
+}
+    </pre>
+    
+    <h2>How It Works</h2>
+    <p>This API is a static JSON file hosted on GitHub Pages. It simulates a real API by using JavaScript to process the query parameters and return appropriate responses.</p>
+    
+    <div class="note">
+        <h3>Important Note</h3>
+        <p>This is a client-side implementation and should only be used for demonstration purposes or non-critical applications. For production use, consider implementing a proper server-side validation system.</p>
+    </div>
+    
+    <script>
+        // This script redirects to the appropriate JSON file based on the query parameters
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const key = urlParams.get('key');
+            const hwid = urlParams.get('hwid');
+            
+            if (key && hwid) {
+                window.location.href = `https://vrzoz.github.io/pointblank-macro/api/validate.html?key=${key}&hwid=${hwid}`;
+            }
+        });
+    </script>
+</body>
+</html> 
